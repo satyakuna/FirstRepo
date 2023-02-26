@@ -3,6 +3,7 @@ package com.demo.ams.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +21,7 @@ public class WorkerController {
 	private WorkerService workerService;
 	
 	@PostMapping("/insertworker")
+	
 	public Worker addWorker(@RequestBody Worker worker) {
 		System.out.println(""+worker.getWorkerJobDesc());
 		Worker w=workerService.addWorker(worker);
@@ -40,7 +42,7 @@ public class WorkerController {
 		return wlist;
 	}
 	
-	@PostMapping("/updateworker")
+	@PostMapping(path = "/updateworker")	
 	public Integer updateWorker(@RequestBody Worker worker) {
 		Integer w=workerService.updateWorkerdetails(worker);
 		return w;
