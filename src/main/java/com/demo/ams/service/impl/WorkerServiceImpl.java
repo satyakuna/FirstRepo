@@ -59,6 +59,14 @@ public class WorkerServiceImpl implements WorkerService {
 		return workerList;
 	}
 
+
+	@Override
+	public Integer updateWorkerdetails(Worker worker) {
+		// TODO Auto-generated method stub
+		Integer w=WorkerDAO.updateWorker(worker);
+		return w;
+	}
+
 	
 
 }

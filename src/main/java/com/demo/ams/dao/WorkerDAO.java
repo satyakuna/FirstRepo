@@ -18,6 +18,9 @@ public interface WorkerDAO {
 	
 	public List<Worker> getWorkerByJobType(String WorkerJobType);
 	
+	public Integer updateWorker(Worker worker);
+
+	
 	
 	
 	

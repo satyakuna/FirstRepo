@@ -39,6 +39,13 @@ public class WorkerController {
 		List<Worker> wlist=workerService.getWorkersDetailsByJobType(worker.getWorkerJobType());
 		return wlist;
 	}
+	
+	@PostMapping("/updateworker")
+	public Integer updateWorker(@RequestBody Worker worker) {
+		Integer w=workerService.updateWorkerdetails(worker);
+		return w;
+		
+	}
 
 
 }

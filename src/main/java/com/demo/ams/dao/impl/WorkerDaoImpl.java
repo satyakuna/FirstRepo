@@ -85,5 +85,14 @@ public class WorkerDaoImpl implements WorkerDAO {
 		return workerList;
 	}
 
+	@Override
+	public Integer updateWorker(Worker worker) {
+		// TODO Auto-generated method stub
+		String SQL="";
+		SQL= "UPDATE worker SET  WORKERCONTACTNO =?, WORKERADDR=?  WHERE WORKERID = ?";
+		int x=jtemplate.update(SQL, new Object[] { worker.getWorkerContactNo(),worker.getWorkerAddr(),worker.getWorkerID()});
+		return x;
+	}
+
 	
 }

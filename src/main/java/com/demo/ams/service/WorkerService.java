@@ -26,6 +26,6 @@ public interface WorkerService {
 	
 	public List<Worker> getWorkersDetailsByJobType(String workerJobType);
 
-	
+	public Integer updateWorkerdetails (Worker worker);
 
 }
