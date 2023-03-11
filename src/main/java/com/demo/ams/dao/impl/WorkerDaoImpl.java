@@ -67,7 +67,7 @@ public class WorkerDaoImpl implements WorkerDAO {
 	public List<Worker> getWorkerByID(int WorkerID) {
 		// TODO Auto-generated method stub
 		String SQL="";
-		SQL= "SELECT WORKERID,WORKERNAME,WORKERCONTACTNO,WORKERJOBDESC FROM worker where WORKERID=?";
+		SQL= "SELECT WORKERID,WORKERNAME,WORKERCONTACTNO,WORKERJOBDESC,WORKERPROOFID,WORKERPROOFTYPE,WORKERADDR,WORKERJOBTYPE FROM worker where WORKERID=?";
 		List<Worker> workerList = jtemplate.query(SQL, new Object[] { WorkerID }, new WorkerMapper());
 		System.out.println("workerList........"+workerList.size());
 		return workerList;
@@ -78,7 +78,7 @@ public class WorkerDaoImpl implements WorkerDAO {
 	public List<Worker> getWorkerByJobType(String workerJobType) {
 		// TODO Auto-generated method stub
 		String SQL="";
-		SQL= "SELECT WORKERID,WORKERNAME,WORKERCONTACTNO,WORKERJOBDESC FROM worker where WORKERJOBTYPE=?";
+		SQL= "SELECT WORKERID,WORKERNAME,WORKERCONTACTNO,WORKERJOBDESC,WORKERPROOFID,WORKERPROOFTYPE,WORKERADDR,WORKERJOBTYPE FROM worker where WORKERJOBTYPE=?";
 		List<Worker> workerList = jtemplate.query(SQL, new Object[] { workerJobType }, new WorkerMapper());
 		System.out.println("workerList........"+workerList.size());
 		

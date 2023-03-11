@@ -21,11 +21,9 @@ public class WorkerController {
 	private WorkerService workerService;
 	
 	@PostMapping("/insertworker")
-	
 	public Worker addWorker(@RequestBody Worker worker) {
 		System.out.println(""+worker.getWorkerJobDesc());
-		Worker w=workerService.addWorker(worker);
-		
+		Worker w=workerService.addWorker(worker);		
 		return w;
 		
 	}

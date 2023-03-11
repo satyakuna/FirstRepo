@@ -15,6 +15,10 @@ public class WorkerMapper implements RowMapper<Worker> {
 		   worker.setWorkerName(rs.getString(2));
 		   worker.setWorkerContactNo(rs.getString(3));
 		   worker.setWorkerJobDesc(rs.getString(4));
+		   worker.setWorkerProofID(rs.getString(5));
+		   worker.setWorkerProofType(rs.getString(6));
+		   worker.setWorkerAddr(rs.getString(7));
+		   worker.setWorkerJobType(rs.getString(8));
 		   return worker;
 }
 }
