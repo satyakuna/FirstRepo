@@ -35,6 +35,7 @@ public class WorkerController {
 		
 	}
 	@PostMapping("/getworkerbytype")
+	//@RequestMapping(value = "",method = )
 	public List<Worker> getWorkerbyType(@RequestBody Worker worker){
 		List<Worker> wlist=workerService.getWorkersDetailsByJobType(worker.getWorkerJobType());
 		return wlist;

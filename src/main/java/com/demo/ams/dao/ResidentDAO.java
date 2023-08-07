@@ -14,6 +14,7 @@ import com.demo.ams.dobj.WorkerDO;
 
 public interface ResidentDAO {
 	 public int fetchResidentID(String uid,String pwd);
+	 public List<ResidentDO> getResidentDetailsByID(String residentID);
      public List<ResidentDO> getResidentDetails(int residentID,String resType);
      public List<ResidentDO> getResidentAllByType(String resType);
      public List<TenantDO> getTenantList();
@@ -62,6 +63,7 @@ public interface ResidentDAO {
      
      public List getDirectoryListByOwner(String apartmentID);
      public List getDirectoryListByTenant(String apartmentID);
+	 public List<ResidentDO> getResidentDetailsByID(int residentID);
 
      
 
