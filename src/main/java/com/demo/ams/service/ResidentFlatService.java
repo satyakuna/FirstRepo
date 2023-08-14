@@ -5,10 +5,12 @@ import java.util.List;
 import com.demo.ams.bean.vo.ResidentFlat;
 import com.demo.ams.dobj.ResidentDO;
 
-public interface ResidentFlatService {
+public interface ResidentFlatService { 
 	
-	
+	public List<ResidentFlat> getResidentFlatDetails(String restype);
 	
 	public ResidentFlat addResidentflat(ResidentFlat residentFlat);
+
+	
 
 }

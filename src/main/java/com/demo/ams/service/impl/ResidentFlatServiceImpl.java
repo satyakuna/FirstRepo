@@ -23,6 +23,15 @@ public class ResidentFlatServiceImpl implements ResidentFlatService{
 		return residentFlat;
 	}
 
+	@Override
+	public List<ResidentFlat> getResidentFlatDetails(String restype) {
+		// TODO Auto-generated method stub
+		List<ResidentFlat> resflatlist=FlatDAO.getFlatDetails(restype);
+		return resflatlist;
+	}
+
+	
+
 	
 	
 
