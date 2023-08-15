@@ -26,6 +26,18 @@ public class FlatDaoImpl implements FlatDAO {
 
 	@Autowired
 	private JdbcTemplate jtemplate;
+	
+	@Override
+	public List<FlatDO> getAllFlatDetails() {
+		System.out.println("inside getflatdeatils....");
+		String SQL = "select b.flat_id,b.flatno,b.TOWERNO,b.floorno,b.houseno,b.parkingno ,b.owner_id from "
+				+ " APT_DETAIL b left outer join RESIDENT a  on b.owner_id=a.resident_id ";
+
+		List<FlatDO> flatList = jtemplate.query(SQL, new FlatMapper());
+		System.out.println(flatList.size());
+		return flatList;
+		
+	}
 
 	@Override
 	public void addFlatDetails(final List<FlatDO> flatList) {
@@ -66,7 +78,7 @@ public class FlatDaoImpl implements FlatDAO {
 		this.jtemplate = jtemplate;
 	}
 
-	@Override
+	/*@Override
 	public List<FlatDO> getFlatDetails() {
 		System.out.println("inside getflatdeatils....");
 		String SQL = "select b.flat_id,b.flatno,b.TOWERNO,b.floorno,b.houseno,b.parkingno,a.resident_name from "
@@ -75,7 +87,7 @@ public class FlatDaoImpl implements FlatDAO {
 		List<FlatDO> flatList = jtemplate.query(SQL, new FlatDetailMapper());
 		System.out.println(flatList.size());
 		return flatList;
-	}
+	}*/
 
 	@Override
 	public String removeFlat(int flatID) {
@@ -127,10 +139,10 @@ public class FlatDaoImpl implements FlatDAO {
 
 	}
 
-	@Override
+	/*@Override
 	public List<FlatDO> getFlatListNoOwner() {
 
-		// System.out.println("inside getflatdeatils....");
+	    System.out.println("inside getflatdeatils....");
 		String SQL = "select FLAT_ID,flatno,TOWERNO,floorno,houseno,parkingno from "
 				+ " APT_DETAIL where owner_id IS NULL";
 
@@ -138,7 +150,7 @@ public class FlatDaoImpl implements FlatDAO {
 		System.out.println(flatList.size());
 		return flatList;
 
-	}
+	}*/
 
 	@Override
 	public String removeBulkFlat(List flatIds) {
@@ -161,11 +173,14 @@ public class FlatDaoImpl implements FlatDAO {
 
 	}
 
-	@Override
-	public List<ResidentFlat> getFlatDetails(String restype) {
+	
+
+	
+	/*@Override
+	public List<FlatDO> getFlatListNoOwner() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	*/}
 
 	/*
 	 * @Override public String linkBulkTenant(List tenantList){ String SQL="";
@@ -204,5 +219,3 @@ public class FlatDaoImpl implements FlatDAO {
 	 * 
 	 * }
 	 */
-
-}

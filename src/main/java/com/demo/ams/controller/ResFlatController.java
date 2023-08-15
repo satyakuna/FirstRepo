@@ -8,20 +8,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.ams.bean.vo.ResidentFlat;
-import com.demo.ams.service.ResidentFlatService;
+import com.demo.ams.dobj.FlatDO;
+import com.demo.ams.service.FlatService;
 import com.demo.ams.service.WorkerService;
 
 @RestController
 public class ResFlatController {
 	
 	@Autowired
-	private ResidentFlatService residentflatService;
+	private FlatService residentflatService;
 	
 	
-	@PostMapping("/getresidentflat")
-	public List<ResidentFlat> getResidentFlat(@RequestBody ResidentFlat residentflat) {
-		System.out.println(residentflat.getFlatID());
-		List<ResidentFlat> resflatlist=residentflatService.getResidentFlatDetails(residentflat.getFlatID());
+	/*
+	 * @PostMapping("/getresidentflat") public List<ResidentFlat>
+	 * getResidentFlat(@RequestBody ResidentFlat residentflat) {
+	 * System.out.println(residentflat.getFlatID()); List<ResidentFlat>
+	 * resflatlist=residentflatService.getResidentFlatDetails(residentflat.getFlatID
+	 * ()); return resflatlist;
+	 * 
+	 * }
+	 */
+	@PostMapping("/getflat")
+	public List<FlatDO> getResidentFlat() {
+		List<FlatDO> resflatlist=residentflatService.getAllFlatDetails();
 		return resflatlist;
 		
 	}

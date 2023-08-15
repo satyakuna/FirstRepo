@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 import com.demo.ams.bean.vo.ResidentFlat;
 import com.demo.ams.dao.FlatDAO;
 import com.demo.ams.dao.ResidentDAO;
+import com.demo.ams.dobj.FlatDO;
 import com.demo.ams.dobj.ResidentDO;
-import com.demo.ams.service.ResidentFlatService;
+import com.demo.ams.service.FlatService;
 
 @Service
-public class ResidentFlatServiceImpl implements ResidentFlatService{
+public class FlatServiceImpl implements FlatService{
 	@Autowired
 	private FlatDAO FlatDAO;
 
@@ -23,16 +24,14 @@ public class ResidentFlatServiceImpl implements ResidentFlatService{
 		return residentFlat;
 	}
 
+	
+
 	@Override
-	public List<ResidentFlat> getResidentFlatDetails(String restype) {
+	public List<FlatDO> getAllFlatDetails() {
 		// TODO Auto-generated method stub
-		List<ResidentFlat> resflatlist=FlatDAO.getFlatDetails(restype);
-		return resflatlist;
+		List<FlatDO> flatList=FlatDAO.getAllFlatDetails();
+		return flatList;
 	}
-
-	
-
-	
 	
 
 }
